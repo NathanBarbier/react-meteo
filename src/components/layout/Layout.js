@@ -1,9 +1,13 @@
 const Layout = ({children}) => {
     return ( 
         <>
-            <div>
+            <div className="App">
                 <header></header>
-                <body>{children}</body>
+                <body>
+                    <div className="App-main">
+                       {children} 
+                    </div>
+                </body>
                 <footer></footer>
             </div>
         </>
