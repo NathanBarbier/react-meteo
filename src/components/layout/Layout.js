@@ -4,7 +4,7 @@ const Layout = ({children}) => {
             <div className="App">
                 <header></header>
                 <main>
-                    <div className="App-main">
+                    <div className="App-main mx-auto pt-5">
                        {children} 
                     </div>
                 </main>
