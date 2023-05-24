@@ -1,3 +1,7 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Meteo from "../pages/Meteo";
+import Layout from '../components/layout/Layout';
+
 const Routeur = () => {
     return ( 
         <>
