@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Meteo from "../pages/Meteo";
+import Home from "../pages/Home";
 import Layout from '../components/layout/Layout';
 
 const Routeur = () => {
@@ -8,7 +8,7 @@ const Routeur = () => {
         <Router>
             <Layout>
                 <Routes>
-                    <Route path='/' element={<Meteo/>}/>
+                    <Route path='/' element={<Home/>}/>
                 </Routes>
             </Layout>
         </Router>
