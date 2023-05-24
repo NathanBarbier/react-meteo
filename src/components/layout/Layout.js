@@ -3,11 +3,11 @@ const Layout = ({children}) => {
         <>
             <div className="App">
                 <header></header>
-                <body>
+                <main>
                     <div className="App-main">
                        {children} 
                     </div>
-                </body>
+                </main>
                 <footer></footer>
             </div>
         </>

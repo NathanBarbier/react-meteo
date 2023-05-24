@@ -1,24 +1,32 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { useParams } from 'react-router-dom';
 
-function SearchForm({ville}){
+const SearchForm = ({ onSearch }) => {
+    const [searchTerm, setSearchTerm] = useState('')
 
-    const [data, setData] = useState([])
-    const fetchData = async () => {
-        try {
-            const response = await axios.get('https://api.openweathermap.org/data/2.5/weather?q='+ville+'&lang=fr&units=metric&appid=6193f9c91e0d8975adb8c302aeaf5862')
-            setData(response.data)
-        } catch (error) {
-            console.error(error)
-        }
-
-        return(
-            <p>
-                {data}
-            </p>
-        )
+    const handleChange = (event) => {
+        setSearchTerm(event.target.value)
     }
+
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        onSearch(searchTerm)
+    }
+    
+    return (
+        <>
+            <form onSubmit={handleSubmit}>
+                <input
+                    className='ps-3'
+                    type='text'
+                    placeholder='Search...'
+                    value={searchTerm}
+                    onChange={handleChange}
+                />
+                <button type='submit'>Search</button>
+            </form>
+        </>
+    )
 }
 
 export default SearchForm
